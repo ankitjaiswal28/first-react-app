@@ -15,6 +15,9 @@ const AddExpensesForm = (props) => {
   })
 
   */
+ const cancleHandler = () => {
+   props.onCancel();
+ }
   const titleChngeHandler = (event) => {
     // When We use Multiple Sate
     setEnteredTitle(event.target.value);
@@ -142,6 +145,7 @@ const AddExpensesForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={cancleHandler}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
