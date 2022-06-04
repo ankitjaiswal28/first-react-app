@@ -3,6 +3,7 @@ import "./NewExpenses.css";
 import Card from "./Card";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpenseChart from "./ExpenseChart";
 const NewExpenses = (props) => {
   const [selectedYear, setSelectedYear] = useState("2020");
   const changeFilterHandler = (parameter) => {
@@ -29,7 +30,7 @@ const NewExpenses = (props) => {
           filteredYear={selectedYear}
           onFilterChange={changeFilterHandler}
         />
-        \{/* 1) Trinary Oprator */}
+        {/* 1) Trinary Oprator */}
         {/* {filteredExpense.length === 0 ? <p>No Expense Found</p> : filteredExpense.map((expense) => (
       <ExpenseItem
       key={expense.id}
@@ -50,6 +51,7 @@ const NewExpenses = (props) => {
       ))} */}
         {/* 3) Basic Js Function */}
         {/* {noExpenseItemValue} */}
+        <ExpenseChart expenses={filteredExpense} />
         <ExpensesList expenseList={filteredExpense} selectedYear={selectedYear} />
       </Card>
     </li>
